@@ -1,0 +1,22 @@
+{% extends 'home.html' %}
+{% block content %}
+    <h1>欢迎{{ info.name }}回家，请查看号码列表</h1>
+    <table class="table table-border">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>手机号</th>
+            <th>归属地</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in data %}
+            <tr>
+                <td>{{ row.id }}</td>
+                <td>{{ row.phone }}</td>
+                <td>{{ row.city }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'home.html' %}
+{% block content %}
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">修改部门信息</div>
+            <div class="panel-body">
+                <form class="form-inline" method="post" novalidate>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <p>
+                            {{ form.departname }}
+                            {{ form.departname.errors.0 }}
+                        </p>
+                        {#                    <input type="text" class="form-control" name="bmmc" value="{{ depart.departname }}">#}
+                    </div>
+                    <div class="form-group">
+                        <p>
+                            {{ form.count }}
+                            {{ form.count.errors.0 }}
+                        </p>
+                        {#                    <input type="text" class="form-control" name="bmrs" value="{{ depart.count }}">#}
+                    </div>
+                    <button type="submit" class="btn btn-default">提 交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

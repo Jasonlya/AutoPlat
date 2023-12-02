@@ -1,0 +1,34 @@
+{% extends 'home.html' %}
+{% block content %}
+<div style="margin: 10px 0;">
+    <a href="/add/user" class="btn btn-success">新增部门</a>
+</div>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <td>用户id</td>
+        <td>用户姓名</td>
+        <td>年龄</td>
+        <td>邮箱</td>
+        <td>联系方式</td>
+        <td>部门</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for user in querset %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.age }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phonenum }}</td>
+            <td>{{ user.depart.departname }}</td>
+            <td>
+                <a href="/delete/user/?userid={{ user.id }}" class="btn btn-danger btn-xs">删除</a>
+                <a href="/update/user/?userid={{ user.id }}" class="btn btn-primary btn-xs">编辑</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

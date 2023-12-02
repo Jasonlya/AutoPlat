@@ -1,0 +1,35 @@
+{% extends 'home.html' %}
+{% block content %}
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {% if is_edit %}
+                    编辑部门
+                {% else  %}
+                    新增部门
+                {% endif %}
+            </div>
+            <div class="panel-body">
+                <form class="form-inline" method="post" novalidate>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {#                    <input type="text" class="form-control" name="bmmc" placeholder="部门名称">#}
+                        <p>
+                            {{ form.departname.label }}:{{ form.departname }}
+                            {{ form.departname.erros.0 }}
+                        </p>
+
+                    </div>
+                    <div class="form-group">
+                        <p>
+                            {{ form.count.label }}:{{ form.count }}
+                            {{ form.count.erros.0 }}
+                        </p>
+                        {#                    <input type="text" class="form-control" name="bmrs" placeholder="部门人数">#}
+                    </div>
+                    <button type="submit" class="btn btn-default">提 交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
