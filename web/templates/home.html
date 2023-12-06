@@ -3,72 +3,110 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>自动化测试平台</title>
-    <link rel="stylesheet" href="{% static 'lib/bootstrap-3.4.1/css/bootstrap.min.css' %}">
-    {% block css %}{% endblock %}
+    <title>自动化用例管理系统</title>
+    <link rel="stylesheet" href="{% static 'lib/bootstrap-5.3.2/dist/css/bootstrap.css' %}">
+    <style>
+        /* 自定义样式 */
+        body {
+        {#padding-top: 10px;#}{#padding-bottom: 10px;#} display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+        }
+
+        .header {
+            text-align: left;
+            margin-bottom: 20px;
+        {#background-color: lightsteelblue;#}
+        }
+
+        .header > h1 {
+            font-size: 30px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f8f9fa;
+            margin-top: auto;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            bottom: 0;
+            padding: 10px;
+        {#background-color: #a52834;#} width: 160px;
+            height: 1000px;
+            margin: auto;
+        }
+
+        .content {
+            margin-left: 250px; /* 导航栏宽度 */
+        }
+    </style>
 </head>
 <body>
-<nav class="navbar navbar-default" style="border-radius: 0">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Brand</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <form class="navbar-form navbar-left">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
+<header class="header">
+    <h1 class="display-4 ">自动化用例管理系统</h1>
+</header>
 <div class="container">
-    {% block content %}{% endblock %}
+    <div class="row">
+        <div class="col-md-3 sidebar">
+            <nav class="navbar  navbar-light  flex-column" id="dh">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ylgl" target="ylgl">用例管理</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/test-execution">用例执行</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/test-plans">计划管理</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-md-9 content" >
+            <div class="jumbotron" id="content-container">
+                {% block content %}
+                    <h2 class="display-6">欢迎来到自动化用例管理系统</h2>
+                    <p class="lead">这是一个用于管理和执行自动化测试用例的系统。您可以使用以下功能：</p>
+                    <ul>
+                        <li>用例管理：创建、编辑和管理测试用例。</li>
+                        <li>用例执行：执行自动化测试用例并查看执行结果。</li>
+                        <li>计划管理：创建和管理测试计划，安排用例执行。</li>
+                    </ul>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
 </div>
-<script src="{% static 'lib/bootstrap-3.4.1/js/bootstrap.min.js' %}"></script>
+<footer class="footer">
+    <p>版权所有 &copy; 2023 自动化用例管理系统</p>
+</footer>
+<script src="{% static 'lib/bootstrap-5.3.2/dist/js/bootstrap.bundle.js' %}"></script>
 <script src="{% static 'lib/jquery-3.7.1.min.js' %}"></script>
-{% block js %}{% endblock %}
+{#<script>#}
+{#    $(document).ready(function () {#}
+{#        $('.nav-link').click(function () {#}
+{#            var target = $(this).data('target');#}
+{#            $.ajax({#}
+{#                url: '/target/',#}
+{#                type: 'POST',#}
+{#                data: {#}
+{#                    target: target#}
+{#                },#}
+{#                success: function (data) {#}
+{#                    $('#content-container').html(data);#}
+{#                },#}
+{#                error: function () {#}
+{#                    console.log('加载内容失败');#}
+{#                }#}
+{#            });#}
+{#        });#}
+{#    });#}
+{#</script>#}
 </body>
 </html>
