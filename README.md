@@ -2,10 +2,17 @@
 # Django+bootstrap+jqurey+mysql
 ## Django基础
 ### 1.新建django项目
+    pip3 install django
+    python3 -m django --version
+    启动项目：
+    python manage.py runserver
 ### 2.创建app
     python manage.py startapp xx
+    补充删除app的方式：
+    manage.py migrate my_app_name zero 
 ### 3.注册app
     settings.py中INSTALLED_APPS中 xx.app.xxConfig
+
 ### 4.配置数据库
     settings.py中DATABASES
 ### 5.创建表
