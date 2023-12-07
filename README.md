@@ -1,6 +1,9 @@
 
 # Django+bootstrap+jqurey+mysql
 ## Django基础
+### 虚拟环境创建
+    python -m venv venv
+    venv\Scripts\activate
 ### 1.新建django项目
     pip3 install django
     python3 -m django --version
