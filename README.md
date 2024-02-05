@@ -66,3 +66,41 @@
 ## 问题
 ### 1.中间件进行鉴权过多。对于不需要鉴权的页面，中间件进行特殊处理
 ![img_3.png](img_3.png)
+
+
+#   vue
+    windows下npm默认路径设置
+    windows下npm默认路径设置
+    在你想更改的目录 D:\nodejs\ 下新建两个文件夹：node_global 和 mode_cache
+    
+    
+    步骤一：设置路径
+    
+    1. 设置npm安装程序时的默认位置
+    npm config set prefix "D:\nodejs\node_global"
+    
+    
+    2. 设置npm安装程序时的缓存位置
+    npm config set cache "D:\nodejs\node_cache"
+    
+    
+    3.在系统目录中找到C:\Users\Administrator\.npmrc文件 修改如下即可：
+    prefix =D:\nodejs\node_global
+    cache = D:\nodejs\node_cache
+    
+     
+    
+    步骤二：设置环境变量NODE_PATH
+    
+    更改环境变量，计算机右击 --> 属性 --> 高级系统设置 --> 环境变量，
+    系统变量里新建一条记录，变量名为NODE_PATH 值为：NODE_PATH = D:\nodejs\node_global\node_modules
+    
+    然后在使用npm安装程序时在后面加一个参数-g即可将安装的程序安装到我们指定的目录
+    如:npm install ionic -g
+    npm install XXX -g
+    
+    设置国内镜像
+    npm config set registry https://registry.npm.taobao.org
+    
+    安置cnpm
+    npm install -g cnpm --registry=https://registry.npm.taobao.org
