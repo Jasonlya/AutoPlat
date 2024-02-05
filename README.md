@@ -104,3 +104,15 @@
     
     安置cnpm
     npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+
+| 版本名称	                        | 版本说明                          | 版本地址                                                  |
+|------------------------------|-------------------------------|-------------------------------------------------------|
+| Flask+Layui混编版               | 采用Flask、Layui、MySQL等框架研发      | https://gitee.com/djangoadmin/DjangoAdmin_Flask_Layui|
+| Tornado+Layui混编版	            | 采用Tornado、Layui、MySQL等框架研发	   |  https://gitee.com/djangoadmin/DjangoAdmin_Tornado_Layui|
+| Django+EleVue前后端分离版	         | 采用Django、Vue、ElementUI等框架研发	  |  https://gitee.com/djangoadmin/DjangoAdmin_Django_EleVue|
+| Flask+EleVue前后端分离版	          | 采用Flask、Vue、ElementUI等框架研发	   |  https://gitee.com/djangoadmin/DjangoAdmin_Flask_EleVue|
+| Tornado+EleVue前后端分离版	        | 采用Tornado、Vue、ElementUI等框架研发	 |  https://gitee.com/djangoadmin/DjangoAdmin_Tornado_EleVue|
+| Django+AntdVue前后端分离版	        | 采用Django、Vue、AntDesign等框架研发	  |  https://gitee.com/djangoadmin/DjangoAdmin_Django_AntdVue|
+| Flask+AntdVue前后端分离版	         | 采用Flask、Vue、AntDesign等框架研发	   |  https://gitee.com/djangoadmin/DjangoAdmin_Flask_AntdVue|
+| Tornado+AntdVue前后端分离版	       | 采用Tornado、Vue、AntDesign等框架研发	 |  https://gitee.com/djangoadmin/DjangoAdmin_Tornado_AntdVue|
